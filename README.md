@@ -1,8 +1,8 @@
 # Deltaray AI Plugins
 
-Options Trading Research related AI plugins for **OpenAI Codex and Claude Code**, maintained by [Deltaray Research Ltd.](https://deltaray.io). 
+Options Trading Research related AI plugins for **OpenAI Codex and Claude Code**, maintained by [Deltaray Research Ltd.](https://deltaray.io).
 
-The **MesoSim** plugin uses [MesoSim](https://mesosim.io) to backtest and analyze Options Trading strategies. 
+The **MesoSim** plugin uses [MesoSim](https://mesosim.io) to backtest and analyze Options Trading strategies.
 
 The same plugin bundle provides both coding agents with a shared MesoSim skill, a dependency-free JavaScript API client, and the Meso documentation MCP server. Claude Code also loads the `/mesosim:*` command files.
 
@@ -10,9 +10,9 @@ The same plugin bundle provides both coding agents with a shared MesoSim skill, 
 
 - Node.js **22 or later**, available to the assistant's execution environment.
 - A Codex or Claude version with plugin support.
-- A [MesoSim account with API access](https://mesosim.io/ai/agent) and an API key for authenticated operations. 
+- A [MesoSim account with API access](https://mesosim.io/ai/agent) and an API key for authenticated operations.
 
-The API client uses Node built-ins. The same runtime runs on Windows, macOS, and Linux. 
+The API client uses Node built-ins. The same runtime runs on Windows, macOS, and Linux.
 If the assistant runs inside WSL or remotely, Node and credentials must be available there.
 
 ## Install in Claude
@@ -46,8 +46,8 @@ Use MesoSim to run this strategy: SPX Put Broken Wing Butterfly at 10 / 15 / 18 
 Use MesoSim to export the analytics NAVs for BACKTEST_ID to nav.csv.
 ```
 
-Codex loads the shared `skills/mesosim/SKILL.md` through its own manifest. 
-All operations in the command table below are available through that skill. 
+Codex loads the shared `skills/mesosim/SKILL.md` through its own manifest.
+All operations in the command table below are available through that skill.
 Claude Code's `/mesosim:*` syntax is its native plugin command namespace; those command files are not required for Codex operation.
 
 The repository ships separate marketplace catalogs because the hosts use different source-entry schemas:
@@ -55,7 +55,7 @@ The repository ships separate marketplace catalogs because the hosts use differe
 - `.agents/plugins/marketplace.json` for Codex.
 - `.claude-plugin/marketplace.json` for Claude.
 
-Both resolve to the same `plugins/mesosim` folder. 
+Both resolve to the same `plugins/mesosim` folder.
 
 ## Credentials
 
@@ -68,8 +68,8 @@ MESOSIM_API_KEY=your-api-key
 
 Use `https://mesosim.io` for Retail. FundPro uses your portal's HTTPS origin, without `/api` or another path. Create keys on that instance's `/api/keys` page, subject to account access.
 
-Keep the file private and outside version control. Never paste the key into chat. 
-The client loads the file internally, accepts BOM/CRLF, comments, literal quoted values and optional `export`, and never applies shell expansion or environment-variable overrides. 
+Keep the file private and outside version control. Never paste the key into chat.
+The client loads the file internally, accepts BOM/CRLF, comments, literal quoted values and optional `export`, and never applies shell expansion or environment-variable overrides.
 After filling in the file, reconnect MCP or start a new session to load the documentation tools.
 
 ## Commands and endpoint coverage
@@ -93,11 +93,7 @@ In Codex, request the operation through the MesoSim skill. In Claude, use the co
 | `/mesosim:sharing ID [--enabled true\|false]` | `GET` or `POST /api/v1/backtest/{id}/sharing` |
 | `/mesosim:delete ID --mode Soft\|Details\|Full` | `DELETE /api/v1/backtest/{id}` |
 
-See the complete [API contract](plugins/mesosim/skills/mesosim/references/api.md) for filters, statuses, entitlements, idempotency, and deletion modes. 
-
-## Releases and development
-
-See [CHANGELOG.md](CHANGELOG.md) for release notes and [RELEASING.md](RELEASING.md) for development checks and the release procedure.
+See the complete [API contract](plugins/mesosim/skills/mesosim/references/api.md) for filters, statuses, entitlements, idempotency, and deletion modes.
 
 ## License
 
