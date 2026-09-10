@@ -1,0 +1,17 @@
+{
+  "name": "mesosim",
+  "version": "1.0.0",
+  "license": "AGPL-3.0-only",
+  "description": "Backtest options strategies with MesoSim: submit and monitor runs, retrieve results, and manage their lifecycle.",
+  "author": {
+    "name": "Deltaray Research Ltd.",
+    "url": "https://deltaray.io"
+  },
+  "homepage": "https://mesosim.io",
+  "keywords": [
+    "mesosim",
+    "options",
+    "backtesting",
+    "deltaray"
+  ]
+}

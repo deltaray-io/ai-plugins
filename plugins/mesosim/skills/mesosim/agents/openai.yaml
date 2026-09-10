@@ -1,0 +1,4 @@
+interface:
+  display_name: "MesoSim"
+  short_description: "Backtest options strategies with MesoSim"
+  default_prompt: "Use MesoSim to create a 60 DTE Broken Wing Butterfly at 10/25/40 deltas."

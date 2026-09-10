@@ -1,0 +1,20 @@
+{
+  "name": "deltaray",
+  "interface": {
+    "displayName": "Deltaray Research Ltd."
+  },
+  "plugins": [
+    {
+      "name": "mesosim",
+      "source": {
+        "source": "local",
+        "path": "./plugins/mesosim"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "@deltaray-io/ai-plugins",
+  "version": "1.0.0",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "description": "AI plugins for Deltaray products, including MesoSim, for Codex and Claude Code.",
+  "author": {
+    "name": "Deltaray Research Ltd.",
+    "url": "https://deltaray.io"
+  },
+  "homepage": "https://deltaray.io",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deltaray-io/ai-plugins.git"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test tests/mesosim.test.mjs tests/mcp-bridge.test.mjs",
+    "test:codex": "node --test tests/codex-plugin.test.mjs",
+    "check": "node scripts/check-plugin.mjs",
+    "check-version": "node scripts/bump-version.mjs --check",
+    "bump-version": "node scripts/bump-version.mjs",
+    "build": "node scripts/build-mcp.mjs",
+    "check-build": "node scripts/build-mcp.mjs --check"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "esbuild": "0.28.2"
+  }
+}

@@ -1,0 +1,25 @@
+Deltaray AI Plugins
+Copyright 2026 Deltaray Research Ltd.
+https://deltaray.io
+https://mesosim.io
+
+SPDX-License-Identifier: AGPL-3.0-only
+
+Original code and included documentation by Deltaray Research Ltd. are
+licensed under the GNU Affero General Public License, version 3 only.
+See LICENSE.
+
+This program is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, version 3 of the License.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program. If not, see https://www.gnu.org/licenses/.
+
+Bundled third-party components retain their respective licenses. See
+plugins/mesosim/THIRD-PARTY-NOTICES.txt for their copyright and license notices.

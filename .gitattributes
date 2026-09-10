@@ -1,0 +1,3 @@
+# Keep source and generated text identical across Windows, macOS, and Linux.
+# The bundled MCP script and license notices are verified byte for byte.
+* text=auto eol=lf

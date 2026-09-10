@@ -1,0 +1,45 @@
+{
+  "name": "mesosim",
+  "version": "1.0.0",
+  "license": "AGPL-3.0-only",
+  "description": "Backtest options strategies with MesoSim: submit and monitor runs, retrieve results, and manage their lifecycle.",
+  "author": {
+    "name": "Deltaray Research Ltd.",
+    "url": "https://deltaray.io"
+  },
+  "homepage": "https://mesosim.io",
+  "keywords": [
+    "mesosim",
+    "options",
+    "backtesting",
+    "deltaray"
+  ],
+  "skills": "./skills/",
+  "mcpServers": {
+    "meso-doc": {
+      "command": "node",
+      "cwd": ".",
+      "args": [
+        "./scripts/mesosim-mcp.mjs"
+      ]
+    }
+  },
+  "interface": {
+    "displayName": "MesoSim",
+    "shortDescription": "Options Strategy Research with MesoSim",
+    "longDescription": "Submit and monitor MesoSim backtests, inspect strategies and results, and consult MesoSim documentation. Supports Retail and FundPro instances.",
+    "developerName": "Deltaray Research Ltd.",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://mesosim.io",
+    "defaultPrompt": [
+      "Use MesoSim to list my recent backtests.",
+      "Use MesoSim to inspect a backtest and its results.",
+      "Use MesoSim to run this strategy: SPX Put Broken Wing Butterfly at 10 / 15 / 18 deltas at 60 DTE.",
+      "Use MesoSim documentation to explain strategy configuration."
+    ]
+  }
+}

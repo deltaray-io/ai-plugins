@@ -1,0 +1,31 @@
+{
+  "name": "deltaray",
+  "owner": {
+    "name": "Deltaray Research Ltd.",
+    "url": "https://deltaray.io"
+  },
+  "metadata": {
+    "description": "MesoSim plugins for Options Strategy backtesting and research, by Deltaray Research Ltd.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "mesosim",
+      "license": "AGPL-3.0-only",
+      "version": "1.0.0",
+      "description": "Backtest options strategies with MesoSim: submit and monitor runs, retrieve results, and research options strategies.",
+      "author": {
+        "name": "Deltaray Research Ltd.",
+        "url": "https://deltaray.io"
+      },
+      "homepage": "https://mesosim.io",
+      "keywords": [
+        "mesosim",
+        "options",
+        "backtesting",
+        "deltaray"
+      ],
+      "source": "./plugins/mesosim"
+    }
+  ]
+}
