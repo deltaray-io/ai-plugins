@@ -26,6 +26,25 @@
         "deltaray"
       ],
       "source": "./plugins/mesosim"
+    },
+    {
+      "name": "ai-researcher",
+      "license": "AGPL-3.0-only",
+      "version": "1.0.0",
+      "description": "Research and validate options strategies with FundPro.",
+      "author": {
+        "name": "Deltaray Research Ltd.",
+        "url": "https://deltaray.io"
+      },
+      "homepage": "https://mesosim.io",
+      "keywords": [
+        "mesosim",
+        "fundpro",
+        "options",
+        "quantitative-research",
+        "deltaray"
+      ],
+      "source": "./plugins/ai-researcher"
     }
   ]
 }
