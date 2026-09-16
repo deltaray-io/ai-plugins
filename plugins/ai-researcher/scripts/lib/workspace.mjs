@@ -4,11 +4,11 @@ import { join } from 'node:path';
 import { InputError } from '../../../mesosim/scripts/lib/config.mjs';
 
 export const workspacePath = () => join(homedir(), 'fundpro');
-export const workspaceDirectories = ['trade_library', 'user_code', 'results'];
+export const workspaceDirectories = ['trade_library', 'user_code', 'results', 'research'];
 
 export const workspaceReadme = `# AI Researcher Workspace
 
-AI Researcher uses this directory for local research files. Preserve existing content and keep credentials out of this directory.
+AI Researcher uses this directory for local research files. New campaigns work in research/YYYY-MM-DD/subject-slug/. Preserve existing content and keep credentials out of this directory.
 
 `;
 
@@ -57,6 +57,7 @@ export async function ensureWorkspace() {
       tradeLibrary: join(root, 'trade_library'),
       userCode: join(root, 'user_code'),
       results: join(root, 'results'),
+      research: join(root, 'research'),
       created,
     };
   } catch (error) {

@@ -32,8 +32,8 @@ test('workspace setup is private, idempotent, and preserves existing content', a
   const first = await ensureWorkspace();
   assert.equal(first.root, join(home, 'fundpro'));
   assert.equal(first.tradeLibrary, join(home, 'fundpro', 'trade_library'));
-  assert.deepEqual(first.created.sort(), [first.root, first.readme, first.tradeLibrary, first.userCode, first.results].sort());
-  for (const path of [first.root, first.tradeLibrary, first.userCode, first.results]) {
+  assert.deepEqual(first.created.sort(), [first.root, first.readme, first.tradeLibrary, first.userCode, first.results, first.research].sort());
+  for (const path of [first.root, first.tradeLibrary, first.userCode, first.results, first.research]) {
     assert.ok((await stat(path)).isDirectory());
     if (process.platform !== 'win32') assert.equal((await stat(path)).mode & 0o777, 0o700);
   }
@@ -52,6 +52,16 @@ test('workspace setup refuses symlinks and wrong path types', { skip: process.pl
   await mkdir(target);
   await symlink(target, join(home, 'fundpro'));
   await assert.rejects(ensureWorkspace(), /must be a directory, not a symlink/);
+});
+
+test('workspace setup refuses a redirected research directory', { skip: process.platform === 'win32' }, async t => {
+  const home = await isolatedHome(t, 'ai researcher unsafe research ');
+  const root = join(home, 'fundpro');
+  const target = join(home, 'target');
+  await mkdir(root);
+  await mkdir(target);
+  await symlink(target, join(root, 'research'));
+  await assert.rejects(ensureWorkspace(), /research must be a directory, not a symlink/);
 });
 
 test('setup reuses MesoSim credentials and reports local readiness', async t => {
@@ -124,6 +134,7 @@ test('isolated bundle connects to /mcp/fundpro-docs and creates the workspace', 
   while (!messages.some(message => message.id === 0)) await once(events, 'message', { signal });
   assert.equal(messages.find(message => message.id === 0).result.serverInfo.name, 'fundpro-docs-test');
   assert.ok((await stat(join(home, 'fundpro', 'trade_library'))).isDirectory());
+  assert.ok((await stat(join(home, 'fundpro', 'research'))).isDirectory());
   child.stdin.end();
   assert.equal((await exited)[0], 0, stderr);
   assert.ok(requests.some(request => request.message?.method === 'initialize'));

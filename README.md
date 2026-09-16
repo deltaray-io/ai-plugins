@@ -75,6 +75,8 @@ Keep the file private and outside version control. Never paste the key into chat
 The client loads the file internally, accepts BOM/CRLF, comments, literal quoted values and optional `export`, and never applies shell expansion or environment-variable overrides.
 After filling in the file, reconnect MCP or start a new session to load the documentation tools. AI Researcher uses the same local setup.
 
+For FundPro research, AI Researcher saves new campaign files directly under `~/fundpro/research/YYYY-MM-DD/subject-slug/`. It reuses that directory when resuming the campaign, so hypotheses, saved backtest requests, results, and reports stay together. An explicit destination you provide takes precedence. Existing files in `~/fundpro/results/` or other locations are preserved.
+
 ## Commands and endpoint coverage
 
 In Codex, request the operation through the MesoSim skill. In Claude, use the corresponding slash command:
