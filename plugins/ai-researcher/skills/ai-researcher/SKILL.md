@@ -33,6 +33,6 @@ Use the prepared `~/fundpro` workspace and the paths designated by the loaded gu
 
 ## Research execution
 
-Follow the loaded guidance for research and persistence. Use the MesoSim plugin for service operations, following its skill and authorization boundaries. Before a multi-run campaign, read the installation-specific backtesting capacity through the MesoSim plugin's `service` catalog and use one account-wide dispatcher. State material uncertainty instead of manufacturing conclusions.
+Follow the loaded guidance for research and persistence. Use the MesoSim plugin for service operations, following its skill and authorization boundaries. Before a multi-run campaign, read the installation-specific backtesting capacity through the MesoSim plugin's `service` catalog and use one account-wide dispatcher. If the capacity document is unavailable, state that installation capacity is unknown and allow up to 50 in-flight submissions across the account, following the MesoSim skill's occupancy and backoff rules. State material uncertainty instead of manufacturing conclusions.
 
 Maintained by [Deltaray Research Ltd.](https://deltaray.io) for [MesoSim FundPro](https://mesosim.io).
