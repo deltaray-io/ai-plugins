@@ -13,6 +13,8 @@ Before the first MesoSim task in a session, discover the configured `meso-doc` M
 
 Keep the guidance and the fact that both documents were read in session context; do not fetch them again for each command or question. This is once per session, not once per installation or bridge process. If setup or MCP access prevents reading either document, complete the available setup steps, state that service guidance could not be loaded, and leave initialization pending. Read both documents when access becomes available; public documentation is not a substitute for the `service` guidance.
 
+Before a multi-run batch, retrieve the complete `backtesting-capacity.md` document from the same `service` catalog, using `MESOSIM_BACKTEST_CAPACITY_V1` for search if needed. This is installation-specific guidance: do not infer a FundPro node count from public documentation or the plugin. If the document is unavailable, keep submissions sequential and state that capacity is unknown. Recheck it when beginning a later batch after a cluster configuration change.
+
 ## Commands in each host
 
 In Claude, use `/mesosim:setup`, `/mesosim:list`, `/mesosim:submit`, and the other `/mesosim:*` commands. They load this shared workflow. In Codex, select the MesoSim skill from the skill picker or ask `Use MesoSim to ...`; interpret an operation following the skill name with the same command table below. The shared skill provides all operations without depending on Claude Code's command loader or shell variables.
@@ -59,7 +61,7 @@ The MCP server provides the `service` catalog and the documentation libraries be
 
 | Library | Use for |
 | --- | --- |
-| `service` | Intro and guidelines; read both once on first plugin use each session and adhere to them throughout the session |
+| `service` | Intro and guidelines on first use; installation-specific backtesting capacity before a multi-run batch |
 | `mesosim-docs` | MesoSim documentation; default for MesoSim configuration and behavior questions |
 | `mesolive-docs` | MesoLive documentation |
 | `deltaray-blog` | Deltaray blog articles |
@@ -69,9 +71,11 @@ List the server's available libraries through MCP discovery to check for newly a
 
 Run `setup` to inspect the configured endpoint without exposing the key. MCP always uses bearer authentication: the bridge sends the existing API key only to the configured MCP endpoint. Follow [references/setup.md](references/setup.md) for setup and troubleshooting. After file changes, reconnect MCP or restart the host session: a running bridge retains its startup configuration. Do not manually register a second MesoSim documentation connection; the installed AI Researcher plugin manages its own connection. With missing/invalid configuration, the bridge starts a local `mesosim_setup` tool without contacting an upstream server. Reconnect after configuration is complete to load documentation tools.
 
-If the matching MCP server/client is absent, unreachable, denied, or returns no useful documentation, use the host's web tools on **https://docs.mesosim.io**. Public documentation works without API credentials. State when using public docs for a FundPro question and qualify deployment-specific behavior. Cite relevant documentation pages or MCP resource identifiers. If neither source is accessible, say what remains unverified rather than inventing an answer. Never forward the API bearer token to hosted docs or another host; the bundled MCP configuration contains no API credentials.
+If the matching MCP server/client is absent, unreachable, denied, or returns no useful documentation, use the host's web tools on **<https://docs.mesosim.io>**. Public documentation works without API credentials. State when using public docs for a FundPro question and qualify deployment-specific behavior. Cite relevant documentation pages or MCP resource identifiers. If neither source is accessible, say what remains unverified rather than inventing an answer. Never forward the API bearer token to hosted docs or another host; the bundled MCP configuration contains no API credentials.
 
 ## Submission and lifecycle
+
+For an authorized multi-run batch, use one account-wide dispatcher and keep the number of accepted, queued, running, or uncertain submissions within the loaded capacity. Count jobs from other API keys when known; if their occupancy is unknown, treat the documented number as a ceiling and adapt to `429` responses. Prepare each intended run as a separate saved keyed request. Refill slots when jobs reach a terminal state, while keeping status polling and retries finite. Do not start an independent full-capacity pool in each worker or agent.
 
 Stay within the user's intended runs and dates. Obtain a complete v3 strategy from their file or an existing backtest. Preserve intended behavior. `prepare` performs only minimal shape checks, not full strategy validation. Keep `Shared: false` unless sharing was requested.
 
