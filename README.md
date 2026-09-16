@@ -77,6 +77,8 @@ After filling in the file, reconnect MCP or start a new session to load the docu
 
 For FundPro research, AI Researcher saves new campaign files directly under `~/fundpro/research/YYYY-MM-DD/subject-slug/`. It reuses that directory when resuming the campaign, so hypotheses, saved backtest requests, results, and reports stay together. An explicit destination you provide takes precedence. Existing files in `~/fundpro/results/` or other locations are preserved.
 
+Reusable strategy definitions belong in `~/fundpro/strategy_library/`, which AI Researcher creates during setup.
+
 ## Commands and endpoint coverage
 
 In Codex, request the operation through the MesoSim skill. In Claude, use the corresponding slash command:

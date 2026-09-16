@@ -31,9 +31,9 @@ test('workspace setup is private, idempotent, and preserves existing content', a
   const home = await isolatedHome(t);
   const first = await ensureWorkspace();
   assert.equal(first.root, join(home, 'fundpro'));
-  assert.equal(first.tradeLibrary, join(home, 'fundpro', 'trade_library'));
-  assert.deepEqual(first.created.sort(), [first.root, first.readme, first.tradeLibrary, first.userCode, first.results, first.research].sort());
-  for (const path of [first.root, first.tradeLibrary, first.userCode, first.results, first.research]) {
+  assert.equal(first.strategyLibrary, join(home, 'fundpro', 'strategy_library'));
+  assert.deepEqual(first.created.sort(), [first.root, first.readme, first.strategyLibrary, first.userCode, first.results, first.research].sort());
+  for (const path of [first.root, first.strategyLibrary, first.userCode, first.results, first.research]) {
     assert.ok((await stat(path)).isDirectory());
     if (process.platform !== 'win32') assert.equal((await stat(path)).mode & 0o777, 0o700);
   }
@@ -133,7 +133,7 @@ test('isolated bundle connects to /mcp/fundpro-docs and creates the workspace', 
   const signal = AbortSignal.timeout(5000);
   while (!messages.some(message => message.id === 0)) await once(events, 'message', { signal });
   assert.equal(messages.find(message => message.id === 0).result.serverInfo.name, 'fundpro-docs-test');
-  assert.ok((await stat(join(home, 'fundpro', 'trade_library'))).isDirectory());
+  assert.ok((await stat(join(home, 'fundpro', 'strategy_library'))).isDirectory());
   assert.ok((await stat(join(home, 'fundpro', 'research'))).isDirectory());
   child.stdin.end();
   assert.equal((await exited)[0], 0, stderr);
