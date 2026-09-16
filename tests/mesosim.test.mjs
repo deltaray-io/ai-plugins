@@ -258,7 +258,7 @@ test('CLI setup and docs report the configured FundPro MCP endpoint', async t =>
 test('release updates both host manifests and rejects drift', async t => {
   const dir = await folder(t);
   const { mkdir } = await import('node:fs/promises');
-  const files = ['package.json', 'package-lock.json', 'plugins/mesosim/.claude-plugin/plugin.json', 'plugins/mesosim/.codex-plugin/plugin.json', '.claude-plugin/marketplace.json'];
+  const files = ['package.json', 'package-lock.json', 'plugins/mesosim/.claude-plugin/plugin.json', 'plugins/mesosim/.codex-plugin/plugin.json', 'plugins/ai-researcher/.claude-plugin/plugin.json', 'plugins/ai-researcher/.codex-plugin/plugin.json', '.claude-plugin/marketplace.json'];
   for (const file of files) {
     const { dirname } = await import('node:path'); await mkdir(join(dir, dirname(file)), { recursive: true });
     await writeFile(join(dir, file), await readFile(new URL('../' + file, import.meta.url)));

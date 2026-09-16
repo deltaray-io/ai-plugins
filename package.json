@@ -18,7 +18,7 @@
     "node": ">=22"
   },
   "scripts": {
-    "test": "node --test tests/mesosim.test.mjs tests/mcp-bridge.test.mjs",
+    "test": "node --test tests/mesosim.test.mjs tests/mcp-bridge.test.mjs tests/ai-researcher.test.mjs",
     "test:codex": "node --test tests/codex-plugin.test.mjs",
     "check": "node scripts/check-plugin.mjs",
     "check-version": "node scripts/bump-version.mjs --check",

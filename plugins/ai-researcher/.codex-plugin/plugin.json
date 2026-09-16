@@ -1,0 +1,45 @@
+{
+  "name": "ai-researcher",
+  "version": "1.0.0",
+  "license": "AGPL-3.0-only",
+  "description": "Research and validate options strategies with FundPro.",
+  "author": {
+    "name": "Deltaray Research Ltd.",
+    "url": "https://deltaray.io"
+  },
+  "homepage": "https://mesosim.io",
+  "keywords": [
+    "mesosim",
+    "fundpro",
+    "options",
+    "quantitative-research",
+    "deltaray"
+  ],
+  "skills": "./skills/",
+  "mcpServers": {
+    "fundpro-doc": {
+      "command": "node",
+      "cwd": ".",
+      "args": [
+        "./scripts/fundpro-docs-mcp.mjs"
+      ]
+    }
+  },
+  "interface": {
+    "displayName": "AI Researcher",
+    "shortDescription": "Options strategy research with FundPro",
+    "longDescription": "Research, improve, and validate options strategies with FundPro.",
+    "developerName": "Deltaray Research Ltd.",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://mesosim.io",
+    "defaultPrompt": [
+      "Research an options strategy with FundPro.",
+      "Improve an options strategy with FundPro.",
+      "Validate an options strategy with FundPro."
+    ]
+  }
+}

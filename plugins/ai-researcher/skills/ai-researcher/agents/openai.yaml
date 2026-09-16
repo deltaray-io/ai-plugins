@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Researcher"
+  short_description: "Options strategy research with FundPro"
+  default_prompt: "Use AI Researcher to research and validate an options strategy."

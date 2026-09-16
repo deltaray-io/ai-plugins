@@ -8,7 +8,9 @@ const targets = [
   ['package-lock.json', ['version'], ['packages', '', 'version']],
   ['plugins/mesosim/.claude-plugin/plugin.json', ['version']],
   ['plugins/mesosim/.codex-plugin/plugin.json', ['version']],
-  ['.claude-plugin/marketplace.json', ['metadata', 'version'], ['plugins', 0, 'version']],
+  ['plugins/ai-researcher/.claude-plugin/plugin.json', ['version']],
+  ['plugins/ai-researcher/.codex-plugin/plugin.json', ['version']],
+  ['.claude-plugin/marketplace.json', ['metadata', 'version'], ['plugins', 0, 'version'], ['plugins', 1, 'version']],
 ];
 
 export async function syncVersions(root, expected, check) {

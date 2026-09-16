@@ -1,0 +1,15 @@
+AI Researcher Plugin
+Copyright 2026 Deltaray Research Ltd.
+https://deltaray.io
+https://mesosim.io
+
+SPDX-License-Identifier: AGPL-3.0-only
+
+Original code and included documentation by Deltaray Research Ltd. are
+licensed under the GNU Affero General Public License, version 3 only.
+See the repository LICENSE file.
+
+Bundled third-party components retain their respective licenses. See
+THIRD-PARTY-NOTICES.txt for their copyright and license notices.
+
+Source code: https://github.com/deltaray-io/ai-plugins

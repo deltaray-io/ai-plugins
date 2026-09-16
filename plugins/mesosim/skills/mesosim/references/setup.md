@@ -9,7 +9,7 @@ MESOSIM_INSTANCE=https://mesosim.io
 MESOSIM_API_KEY=your-api-key
 ```
 
-Use your FundPro portal HTTPS origin when applicable. Both hosts launch the bundled bridge through `node`; it constructs `{MESOSIM_INSTANCE}/mcp/meso-docs` internally. No shell dotenv sourcing, host environment-variable interpolation, or manual FundPro MCP registration is required.
+Use your FundPro portal HTTPS origin when applicable. Both hosts launch the bundled bridge through `node`; it constructs `{MESOSIM_INSTANCE}/mcp/meso-docs` internally. No shell dotenv sourcing, host environment-variable interpolation, or manual registration of that endpoint is required.
 
 Documentation MCP always requires bearer authentication. The bridge supplies `Authorization: Bearer {MESOSIM_API_KEY}` to that exact endpoint. Credentials remain in the home-directory file, never in plugin manifests or command arguments. REST API calls use the same bearer authentication.
 
